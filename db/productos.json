@@ -1,1 +1,58 @@
-[{"sku":"GIJOE036","categorias":["GI Joe","80s","Cartoon"],"titulo":"Cobra Commander G.I. Joe T-Shirt","url":"cobra-commander-g-i-joe-t-shirt","pics":["https:\/\/80stees.imgix.net\/s\/files\/1\/0384\/0921\/products\/cobra-commander-g-i-joe-t-shirt.v3.dsk.jpeg?v=1461357556&usm=18&auto=format&fit=max&h=710&w=463&"],"desc":"This G.I Joe shirt is officially licensed by Hasbro and features a print of the Cobra logo.","articulos":[{"precio":26.97,"descuento":0,"impuesto":13,"existencias":100,"config":{"talla":"S"}},{"precio":26.97,"descuento":0,"impuesto":13,"existencias":80,"config":{"talla":"M"}},{"precio":40.3,"descuento":0,"impuesto":13,"existencias":2,"config":{"talla":"XL"}}]},{"sku":"MOTU113","categorias":["He-Man","80s","Cartoon","Sale"],"titulo":"Masters Of The Universe Characters Shirt","url":"masters-of-the-universe-characters-shirt","pics":["https:\/\/80stees.imgix.net\/s\/files\/1\/0384\/0921\/products\/masters-of-the-universe-characters-shirt.dsk.jpeg?v=1478530370&usm=18&auto=format&fit=max&h=710&w=463&"],"desc":"This Masters of the Universe shirt features characters from the massively popular Filmation animated series. The shirt shows the powerful He-Man, Skeletor, Man-At-Arms, Trap Jaw, Orko, The Sorceress, the ferocious Battle Cat, Beast Man, the modest Prince Adam, Evil-Lyn, the timid Cringer, and She-Ra. This shirt includes both the good and evil characters from the series. Which ever side you rooted for to conquer Castle Grayskull, you are a fan. And, this Masters of the Universe characters shirt is perfect for anyone who has ever seen and loved the animated series. ","articulos":[{"precio":28.73,"descuento":10,"impuesto":13,"existencias":10,"config":{"talla":"S"}},{"precio":45.87,"descuento":0,"impuesto":13,"existencias":2,"config":{"talla":"XL"}}]},{"sku":"TRAN306","categorias":["Transformers","80s","Cartoon","Sale"],"titulo":"Woah Dinos Transformers Shirt ","url":"woah-dinos-transformers-shirt","pics":["https:\/\/80stees.imgix.net\/s\/files\/1\/0384\/0921\/products\/woah-dinos-transformers-shirt.dsk.jpeg?v=1439568391&usm=18&auto=format&fit=max&h=710&w=463&"],"desc":"Optimus Prime is a great leader, and by virtue, has trained his Dinobots well. Very well, in fact. So well that he can keep them from attacking other Autobots who accidentally fall into their enclosure, if you follow me. He could, theoretically, ride a motorcycle through the jungle whilst having his Dinobots run along side him, if you catch my drift. Surely not without fear of said Dinobots pouncing on him, you say? Just so, say I! Let's all just hope that there are no genetically engineered Dinobot hybrids about, or Optimus might lose his Alpha status, if you see where I'm going with this. No? Alright then, this WOAH Dino Transformers Shirt references the scene in Jurassic World where Owen (played by Chris Pratt) keeps his well trained raptors from attacking a worker who had fallen into their enclosure. I'm surprised you didn't see that coming, it's really a quite popular meme.","articulos":[{"precio":27.02,"descuento":10,"impuesto":13,"existencias":10,"config":{"talla":"S"}},{"precio":27.02,"descuento":10,"impuesto":13,"existencias":1,"config":{"talla":"M"}},{"precio":27.02,"descuento":0,"impuesto":13,"existencias":2,"config":{"talla":"L"}}]},{"sku":"TRAN162","categorias":["Transformers","Cartoon"],"titulo":"Transformers Grimlock Shirt ","url":"transformers-grimlock-shirt","pics":["https:\/\/80stees.imgix.net\/s\/files\/1\/0384\/0921\/products\/transformers-grimlock-shirt.v3.dsk.jpeg?v=1486393884&usm=18&auto=format&fit=max&h=710&w=463&"],"desc":"This Transformers shirt features an image of Grimlock and a quote from the 1986 animated movie, \"Me Grimlock No Like You\". Grimlock said this quote to Wheelie right before attacking him in the action-packed movie. No one will think you're full of cesium salami when they see you in this Grimlock shirt. ","articulos":[{"precio":28.95,"descuento":0,"impuesto":13,"existencias":10,"config":{"talla":"S"}},{"precio":28.95,"descuento":10,"impuesto":13,"existencias":0,"config":{"talla":"M"}}]}]
+[{
+    "sku": "GIJOE036",
+    "categorias": ["GI Joe", "80s", "Cartoon"],
+    "titulo": "Cobra Commander G.I. Joe T-Shirt",
+    "url": "cobra-commander-g-i-joe-t-shirt",
+    "pics": ["https:\/\/80stees.imgix.net\/s\/files\/1\/0384\/0921\/products\/cobra-commander-g-i-joe-t-shirt.v3.dsk.jpeg?v=1461357556&usm=18&auto=format&fit=max&h=710&w=463&"],
+    "desc": "This G.I Joe shirt is officially licensed by Hasbro and features a print of the Cobra logo.",
+    "articulos": [{
+        "precio": 26.97,
+        "descuento": 0,
+        "impuesto": 13,
+        "existencias": 100,
+        "config": {
+            "talla": "S"
+        }
+    }, {
+        "precio": 26.97,
+        "descuento": 0,
+        "impuesto": 13,
+        "existencias": 80,
+        "config": {
+            "talla": "M"
+        }
+    }, {
+        "precio": 40.3,
+        "descuento": 0,
+        "impuesto": 13,
+        "existencias": 2,
+        "config": {
+            "talla": "XL"
+        }
+    }]
+}, {
+    "sku": "MOTU113",
+    "categorias": ["He-Man", "80s", "Cartoon", "Sale"],
+    "titulo": "Masters Of The Universe Characters Shirt",
+    "url": "masters-of-the-universe-characters-shirt",
+    "pics": ["https:\/\/80stees.imgix.net\/s\/files\/1\/0384\/0921\/products\/masters-of-the-universe-characters-shirt.dsk.jpeg?v=1478530370&usm=18&auto=format&fit=max&h=710&w=463&"],
+    "desc": "This Masters of the Universe shirt features characters from the massively popular Filmation animated series. The shirt shows the powerful He-Man, Skeletor, Man-At-Arms, Trap Jaw, Orko, The Sorceress, the ferocious Battle Cat, Beast Man, the modest Prince Adam, Evil-Lyn, the timid Cringer, and She-Ra. This shirt includes both the good and evil characters from the series. Which ever side you rooted for to conquer Castle Grayskull, you are a fan. And, this Masters of the Universe characters shirt is perfect for anyone who has ever seen and loved the animated series. ",
+    "articulos": [{
+        "precio": 28.73,
+        "descuento": 10,
+        "impuesto": 13,
+        "existencias": 10,
+        "config": {
+            "talla": "S"
+        }
+    }, {
+        "precio": 45.87,
+        "descuento": 0,
+        "impuesto": 13,
+        "existencias": 2,
+        "config": {
+            "talla": "XL"
+        }
+    }]
+}
+]
