@@ -118,7 +118,7 @@ function createCategories()
             $data = [
                 'name' => $value
             ];
-            print_r($woocommerce->post('products/categories', $data));
+            $woocommerce->post('products/categories', $data);
         }
     }
 }
