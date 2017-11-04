@@ -205,10 +205,10 @@ function getTermsByKeyName($keyName, $configList)
 
 function prepareInitialConfig()
 {
-    echo ('Importing data, wait...');
+    echo ('Importing data, wait...')."\n";
     createCategories();
     createProducts();
-    echo ('Done!');
+    echo ('Done!')."\n";
 }
 
 prepareInitialConfig();
