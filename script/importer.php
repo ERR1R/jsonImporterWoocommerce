@@ -4,7 +4,6 @@ require __DIR__ . '/vendor/autoload.php';
 use Automattic\WooCommerce\Client;
 use Automattic\WooCommerce\HttpClient\HttpClientException;
 
-
 function getWoocommerceConfig()
 {
 
@@ -35,7 +34,19 @@ function getJsonFromFile()
     return $json;
 }
 
-//////////
+function checkProductBySku($skuCode)
+{
+    $woocommerce = getWoocommerceConfig();
+    $products = $woocommerce->get('products');
+    foreach ($products as $product) {
+        $currentSku = strtolower($product['sku']);
+        $skuCode = strtolower($skuCode);
+        if ($currentSku === $skuCode) {
+            return ['exist' => true, 'idProduct' => $product['id']];
+        }
+    }
+    return ['exist' => false, 'idProduct' => null];
+}
 
 
 function createProducts()
@@ -44,12 +55,13 @@ function createProducts()
     $products = getJsonFromFile();
 
     $imgCounter = 0;
-    foreach ($products as $product)
-        {
-		/*Chec sku before create the product */
+    foreach ($products as $product) {
+        /*Chec sku before create the product */
+        $productExist = checkProductBySku($product['sku']);
+
 
         $imagesFormated = array();
-	    /*Main information */
+        /*Main information */
         $name = $product['titulo'];
         $slug = $product['url'];
         $sku = $product['sku'];
@@ -58,19 +70,17 @@ function createProducts()
         $articulos = $product['articulos'];
         $categories = $product['categorias'];
         $categoriesIds = array();
-        foreach ($images as $image)
-            {
+        foreach ($images as $image) {
             $imagesFormated[] = [
                 'src' => $image,
                 'position' => 0
             ]; /* TODO: FIX POSITON */
             $imgCounter++;
-        } 
+        }
 
 
-		/* Prepare categories */
-        foreach ($categories as $category)
-            {
+        /* Prepare categories */
+        foreach ($categories as $category) {
             $categoriesIds[] = ['id' => getCategoryIdByName($category)];
         }
         $finalProduct = [
@@ -84,9 +94,16 @@ function createProducts()
 
         ];
 
-        $productResult = $woocommerce->post('products', $finalProduct);
 
-        return $productResult;
+        if (!$productExist['exist']) {
+            return $productResult = $woocommerce->post('products', $finalProduct);
+        } else {
+            /*Update product information */
+            $idProduct = $productExist['idProduct'];
+           return  $woocommerce->put('products/' . $idProduct, $finalProduct);
+        }
+
+
     }
 }
 
@@ -95,12 +112,9 @@ function createCategories()
 {
     $categoryValues = getCategories();
     $woocommerce = getWoocommerceConfig();
-	
-	/* Add a category verificator */
-    foreach ($categoryValues as $value)
-        {
-        if (!checkCategoryByname($value))
-            {
+    
+    foreach ($categoryValues as $value) {
+        if (!checkCategoryByname($value)) {
             $data = [
                 'name' => $value
             ];
@@ -113,10 +127,8 @@ function checkCategoryByName($categoryName)
 {
     $woocommerce = getWoocommerceConfig();
     $categories = $woocommerce->get('products/categories');
-    foreach ($categories as $category)
-        {
-        if ($category['name'] === $categoryName)
-            {
+    foreach ($categories as $category) {
+        if ($category['name'] === $categoryName) {
             return true;
         }
     }
@@ -129,12 +141,9 @@ function getCategories()
     $products = getJsonFromFile();
     $categories = array_column($products, 'categorias');
 
-    foreach ($categories as $categoryItems)
-        {
-        foreach ($categoryItems as $categoryValue)
-            {
+    foreach ($categories as $categoryItems) {
+        foreach ($categoryItems as $categoryValue) {
             $categoryPlainValues[] = $categoryValue;
-
         }
     }
     $categoryList = array_unique($categoryPlainValues);
@@ -146,10 +155,8 @@ function getCategoryIdByName($categoryName)
 {
     $woocommerce = getWoocommerceConfig();
     $categories = $woocommerce->get('products/categories');
-    foreach ($categories as $category)
-        {
-        if ($category['name'] == $categoryName)
-            {
+    foreach ($categories as $category) {
+        if ($category['name'] == $categoryName) {
             return $category['id'];
         }
     }
@@ -158,11 +165,9 @@ function getCategoryIdByName($categoryName)
 function getproductAtributesNames($articulos)
 {
     $keys = array();
-    foreach ($articulos as $articulo)
-        {
+    foreach ($articulos as $articulo) {
         $terms = $articulo['config'];
-        foreach ($terms as $key => $term)
-            {
+        foreach ($terms as $key => $term) {
             array_push($keys, $key);
         }
     }
@@ -170,8 +175,7 @@ function getproductAtributesNames($articulos)
     $keys = array_unique($keys);
     $configlist = array_column($articulos, 'config');
     $options = array();
-    foreach ($keys as $key)
-        {
+    foreach ($keys as $key) {
         $attributes = array(
             array(
                 'name' => $key,
@@ -187,14 +191,11 @@ function getproductAtributesNames($articulos)
 
 function getTermsByKeyName($keyName, $configList)
 {
-	//var_dump($configList);
+    //var_dump($configList);
     $options = array();
-    foreach ($configList as $config)
-        {
-        foreach ($config as $key => $term)
-            {
-            if ($key == $keyName)
-                {
+    foreach ($configList as $config) {
+        foreach ($config as $key => $term) {
+            if ($key == $keyName) {
                 array_push($options, $term);
             }
         }
