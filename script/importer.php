@@ -96,14 +96,12 @@ function createProducts()
 
 
         if (!$productExist['exist']) {
-            return $productResult = $woocommerce->post('products', $finalProduct);
+             $productResult = $woocommerce->post('products', $finalProduct);
         } else {
             /*Update product information */
             $idProduct = $productExist['idProduct'];
-           return  $woocommerce->put('products/' . $idProduct, $finalProduct);
+            $woocommerce->put('products/' . $idProduct, $finalProduct);
         }
-
-
     }
 }
 
